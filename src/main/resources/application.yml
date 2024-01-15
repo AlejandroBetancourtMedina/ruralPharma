@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: API_Rural-Pharma
+  datasource:
+    password: msteTOr9ENg6DRwtvxPPppMSX4ltgual
+    url: jdbc:postgresql://dpg-cmirm0q1hbls738gei2g-a.oregon-postgres.render.com:5432/farmacia_5fgk
+    username: farmacia
+  jpa:
+    hibernate:
+      ddl-auto: none # para decirle a la app que cree la tabla
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    show-sql: false
+
+server:
+  port: 8080
+  contextPath: /${spring.application.name} # invocar el nombre de la api
+  servlet:
+    context-path: /${spring.application.name} # invocar el nombre de la api
+  error: # forma de ver errores
+    include-message: always
+    include-exception: true
+    include-binding-errors: always
+
