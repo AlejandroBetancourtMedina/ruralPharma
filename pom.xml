@@ -9,20 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ruralPharma</groupId>
-	<artifactId>java-maven</artifactId>
+	<artifactId>ruralPharma</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ruralPharma</name>
 	<description>Proyecto de Titulo IPLACEX</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-	<distributionManagement>
-	        <repository>
-	          <id>github</id>
-	          <name>GitHub Packages</name>
-	          <url>https://maven.pkg.github.com/AlejandroBetancourtMedina/ruralPharma</url>
-	        </repository>
-     	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
