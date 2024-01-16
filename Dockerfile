@@ -1,5 +1,5 @@
 #Usa una imagen base con una versión de Java compatible con tu aplicación Spring Boot
-FROM adoptopenjdk:17-jre-hotspot
+FROM adoptopenjdk:17-jre
 
 #Etiqueta del mantenedor
 LABEL maintainer="Alejandro <a.betancourt92@hotmail.com>"
