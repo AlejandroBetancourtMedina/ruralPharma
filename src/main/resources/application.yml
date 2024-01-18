@@ -2,12 +2,12 @@ spring:
   application:
     name: API_Rural-Pharma
   datasource:
-    password: msteTOr9ENg6DRwtvxPPppMSX4ltgual
-    url: jdbc:postgresql://dpg-cmirm0q1hbls738gei2g-a.oregon-postgres.render.com:5432/farmacia_5fgk
-    username: farmacia
+    password: 123456
+    url: jdbc:postgresql://localhost:5432/Farmacia
+    username: postgres
   jpa:
     hibernate:
-      ddl-auto: none # para decirle a la app que cree la tabla
+      ddl-auto: create # para decirle a la app que cree la tabla
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

@@ -19,7 +19,9 @@ public class Paciente {
     public Paciente() {
     }
 
-    public String getRut() {return rut;}
+    public String getRut() {
+        return rut;
+    }
 
     public void setRut(String rut) {
         this.rut = rut;
@@ -34,7 +36,6 @@ public class Paciente {
     }
 
     public LocalDate getfNacimiento() {
-
         return fNacimiento;
     }
 
@@ -47,11 +48,10 @@ public class Paciente {
     }
 
     public void setDomicilio(String domicilio) {
-        domicilio = domicilio;
+        this.domicilio = domicilio;
     }
 
     public LocalDateTime getFechaCreacion() {
-        fechaCreacion=LocalDateTime.now();// para invocar el AHORA  de fecha y hora conn el ".now"
         return fechaCreacion;
     }
 

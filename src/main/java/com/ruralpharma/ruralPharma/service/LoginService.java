@@ -30,10 +30,11 @@ public class LoginService {
                     (HttpStatus.NOT_FOUND, String.format("Login %s no se encuentra", rut));
         }
         response.get().setUsuario(login.getUsuario());
-        response.get().setContraseña(login.getContrasena());
+        response.get().setContraseña(login.getContraseña());
         response.get().setNombre(login.getNombre());
         response.get().setApellido(login.getApellido());
         response.get().setProfesion(login.getProfesion());
+        response.get().setEstablecimiento(login.getEstablecimiento());
         response.get().setFechaActualizacion(login.getFechaActualizacion());
 
         return loginRepository.save(response.get());

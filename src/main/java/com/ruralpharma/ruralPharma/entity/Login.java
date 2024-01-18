@@ -16,6 +16,7 @@ public class Login {
     private String nombre;
     private String apellido;
     private String profesion;
+    private String establecimiento;
     private LocalDateTime fechaCreacion;// LocaDateTime almacenara fecha y hora
     private LocalDateTime fechaActualizacion;
 
@@ -38,7 +39,7 @@ public class Login {
         this.usuario = usuario;
     }
 
-    public String getContrasena() {
+    public String getContraseña() {
         return contraseña;
     }
 
@@ -70,6 +71,9 @@ public class Login {
         this.profesion = profesion;
     }
 
+
+    public String getEstablecimiento(){return establecimiento;}
+    public void setEstablecimiento(String establecimiento) {this.establecimiento = establecimiento;}
     public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
@@ -95,6 +99,7 @@ public class Login {
                     ", nombre=" + nombre + '\'' +
                     ", apellido=" + apellido + '\'' +
                     ", profesion=" + profesion + '\'' +
+                    ", establecimiento=" + establecimiento + '\'' +
                     ", fechaCreacion=" + fechaCreacion +
                     ", fechaActualizacion=" + fechaActualizacion +
                 '}';
