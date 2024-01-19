@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 public class Medicamento {
     @Id
-
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String producto;
     private LocalDateTime fechaEntrega;

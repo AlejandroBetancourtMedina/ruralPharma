@@ -23,8 +23,8 @@ public class MedicamentoService {
         return medicamentoRepository.findAll();
     }
 
-    public Medicamento listarUno(int id){
-        return medicamentoRepository.findById(id).get();
+    public Optional<Medicamento> listarUno (int id){
+        return medicamentoRepository.findById(id);
     }
     public Medicamento actualizar(Integer id, Medicamento medicamento) {
         Optional<Medicamento> response = medicamentoRepository.findById(Integer.valueOf(id));
