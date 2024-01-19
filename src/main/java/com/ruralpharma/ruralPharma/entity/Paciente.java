@@ -12,6 +12,7 @@ public class Paciente {
     private String nombre;
     private LocalDate fNacimiento;
 
+    private int telefono;
     private String domicilio;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActualizacion;
@@ -41,6 +42,14 @@ public class Paciente {
 
     public void setfNacimiento(LocalDate fNacimiento) {
         this.fNacimiento = fNacimiento;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
     public String getDomicilio() {
@@ -73,6 +82,7 @@ public class Paciente {
                 "rut=" + rut +
                 ", nombre ='" + nombre + '\'' +
                 ", fNacimiento=" + fNacimiento + '\'' +
+                ", telefono=" + telefono + '\'' +
                 ", domicilio=" + domicilio + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaActualizacion=" + fechaActualizacion +

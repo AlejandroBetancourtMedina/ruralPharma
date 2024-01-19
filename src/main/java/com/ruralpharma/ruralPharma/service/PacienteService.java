@@ -34,6 +34,7 @@ public class PacienteService {
         }
         response.get().setNombre(paciente.getNombre());
         response.get().setfNacimiento(paciente.getfNacimiento());
+        response.get().setTelefono(paciente.getTelefono());
         response.get().setDomicilio(paciente.getDomicilio());
         response.get().setFechaActualizacion(paciente.getFechaActualizacion());
 
