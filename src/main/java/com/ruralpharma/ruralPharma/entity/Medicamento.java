@@ -1,9 +1,6 @@
 package com.ruralpharma.ruralPharma.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.id.IncrementGenerator;
 
 import java.time.LocalDateTime;
@@ -12,7 +9,7 @@ import java.util.Date;
 @Entity
 public class Medicamento {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     private int id;
     private String producto;
     private LocalDateTime fechaEntrega;
@@ -22,6 +19,9 @@ public class Medicamento {
     private Date fechaVencimiento;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActualizacion;
+    @ManyToOne
+    @JoinColumn(name="rut")
+    private Paciente paciente;
 
     public Medicamento() {
     }
@@ -96,6 +96,14 @@ public class Medicamento {
 
     public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
     @Override

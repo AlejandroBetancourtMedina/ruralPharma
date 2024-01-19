@@ -1,9 +1,13 @@
 package com.ruralpharma.ruralPharma.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Paciente {
@@ -16,6 +20,8 @@ public class Paciente {
     private String domicilio;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActualizacion;
+    @OneToMany(mappedBy="paciente", cascade = CascadeType.ALL)
+    private List<Medicamento> medicamentos;
 
     public Paciente() {
     }

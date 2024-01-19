@@ -7,7 +7,7 @@ spring:
     username: postgres
   jpa:
     hibernate:
-      ddl-auto: none # para decirle a la app que cree la tabla
+      ddl-auto: create # para decirle a la app que cree la tabla
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
