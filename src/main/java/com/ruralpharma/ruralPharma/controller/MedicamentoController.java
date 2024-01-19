@@ -1,5 +1,6 @@
 package com.ruralpharma.ruralPharma.controller;
 
+import com.ruralpharma.ruralPharma.entity.Login;
 import com.ruralpharma.ruralPharma.entity.Medicamento;
 import com.ruralpharma.ruralPharma.entity.Paciente;
 import com.ruralpharma.ruralPharma.service.MedicamentoService;
@@ -28,6 +29,12 @@ public class MedicamentoController {
     public ResponseEntity<List<Medicamento>> listarMedicamento() {
         return new ResponseEntity<>(medicamentoService.listar(), HttpStatus.OK);
     }
+
+    @GetMapping("/listarUno/{id}")
+    public ResponseEntity<Login> listarUnMedicamento(@PathVariable("id") int id) {
+        return new ResponseEntity (medicamentoService.listarUno(id), HttpStatus.OK);
+    }
+
 
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<Medicamento> actualizarMedicamento(@PathVariable Integer id, @RequestBody Medicamento medicamento) {
