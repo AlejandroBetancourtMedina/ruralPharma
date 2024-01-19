@@ -21,6 +21,10 @@ public class PacienteService {
         return pacienteRepository.findAll();
     }
 
+    public Paciente listarUno(int rut){
+        return pacienteRepository.findById(rut).get();
+    }
+
     public Paciente actualizar(String rut, Paciente paciente) {
         Optional<Paciente> response = pacienteRepository.findById(Integer.valueOf(rut));
 

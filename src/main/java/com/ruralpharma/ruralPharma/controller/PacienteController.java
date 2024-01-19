@@ -26,6 +26,11 @@ public class PacienteController {
         return new ResponseEntity<>(pacienteService.listar(), HttpStatus.OK);
     }
 
+    @GetMapping("/listarUno/{rut}")
+    public ResponseEntity<Paciente> listarUnPaciente(@PathVariable("rut") int rut) {
+        return new ResponseEntity (pacienteService.listarUno(rut), HttpStatus.OK);
+    }
+
     @PutMapping("/actualizar/{rut}")
     public ResponseEntity<Paciente> actualizarPaciente(@PathVariable String rut, @RequestBody Paciente paciente) {
         Paciente response = pacienteService.actualizar(rut, paciente);
