@@ -1,6 +1,7 @@
 package com.ruralpharma.ruralPharma.controller;
 
 import com.ruralpharma.ruralPharma.entity.Login;
+import com.ruralpharma.ruralPharma.entity.Paciente;
 import com.ruralpharma.ruralPharma.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,11 @@ public class LoginController {
     @GetMapping("/listar")
     public ResponseEntity<List<Login>> listarLogin() {
         return new ResponseEntity<>(loginService.listar(), HttpStatus.OK);
+    }
+
+    @GetMapping("/listarUno/{rut}")
+    public ResponseEntity<Login> listarUnLogin(@PathVariable("rut") int rut) {
+        return new ResponseEntity (loginService.listarUno(rut), HttpStatus.OK);
     }
 
     @PutMapping("/actualizar/{rut}")

@@ -1,6 +1,7 @@
 package com.ruralpharma.ruralPharma.service;
 
 import com.ruralpharma.ruralPharma.entity.Login;
+import com.ruralpharma.ruralPharma.entity.Paciente;
 import com.ruralpharma.ruralPharma.repository.LoginRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,9 @@ public class LoginService {
         return loginRepository.findAll();
     }
 
+    public Login listarUno(int rut){
+        return loginRepository.findById(rut).get();
+    }
     public Login actualizar(String rut, Login login) {
         Optional<Login> response = loginRepository.findById(Integer.valueOf(rut));
 
