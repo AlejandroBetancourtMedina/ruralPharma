@@ -37,6 +37,7 @@ public class MedicamentoService {
         response.get().setFechaEntrega(medicamento.getFechaEntrega());
         response.get().setDescripcion(medicamento.getDescripcion());
         response.get().setCantidad(medicamento.getCantidad());
+        response.get().setTipoReceta(medicamento.getTipoReceta());
         response.get().setLote(medicamento.getLote());
         response.get().setFechaVencimiento(medicamento.getFechaVencimiento());
         response.get().setFechaActualizacion(medicamento.getFechaActualizacion());

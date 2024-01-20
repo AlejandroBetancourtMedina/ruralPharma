@@ -15,6 +15,7 @@ public class Medicamento {
     private LocalDateTime fechaEntrega;
     private String descripcion;
     private int cantidad;
+    private String tipoReceta;
     private String lote;
     private Date fechaVencimiento;
     private LocalDateTime fechaCreacion;
@@ -66,6 +67,12 @@ public class Medicamento {
         this.cantidad = cantidad;
     }
 
+    public String getTipoReceta() {
+        return tipoReceta;
+    }
+    public void setTipoReceta(String tipoReceta) {
+        this.tipoReceta = tipoReceta;
+    }
     public String getLote() {
         return lote;
     }
@@ -114,6 +121,7 @@ public class Medicamento {
                 ", fechaEntrega=" + fechaEntrega + '\'' +
                 ", descripcion=" + descripcion + '\'' +
                 ", cantidad=" + cantidad +
+                ", tipoReceta" + tipoReceta +
                 ", lote=" + lote +
                 ", fechaVencimiento=" + fechaVencimiento +
                 ", fechaCreacion=" + fechaCreacion +
