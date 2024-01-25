@@ -21,12 +21,12 @@ public class PacienteService {
         return pacienteRepository.findAll();
     }
 
-    public Paciente listarUno(int rut){
+    public Paciente listarUno(String rut){
         return pacienteRepository.findById(rut).get();
     }
 
     public Paciente actualizar(String rut, Paciente paciente) {
-        Optional<Paciente> response = pacienteRepository.findById(Integer.valueOf(rut));
+        Optional<Paciente> response = pacienteRepository.findById(rut);
 
         if(!response.isPresent()){
             throw  new ResponseStatusException
@@ -42,7 +42,7 @@ public class PacienteService {
     }
 
     public void eliminar(String rut) {
-        Optional<Paciente> response = pacienteRepository.findById(Integer.valueOf(rut));
+        Optional<Paciente> response = pacienteRepository.findById(rut);
         if(!response.isPresent()){
             throw new ResponseStatusException
                     (HttpStatus.NOT_FOUND, String.format("El Paciente %s no se encuentra. Verifique los datos para eliminar", rut));

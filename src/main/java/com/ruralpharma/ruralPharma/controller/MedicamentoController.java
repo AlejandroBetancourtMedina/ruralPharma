@@ -29,12 +29,10 @@ public class MedicamentoController {
     public ResponseEntity<List<Medicamento>> listarMedicamento() {
         return new ResponseEntity<>(medicamentoService.listar(), HttpStatus.OK);
     }
-
     @GetMapping("/listarUno/{id}")
-    public ResponseEntity<Login> listarUnMedicamento(@PathVariable("id") int id) {
-        return new ResponseEntity (medicamentoService.listarUno(id), HttpStatus.OK);
+    public ResponseEntity<Medicamento> listarUnoMedicamento(@PathVariable("id") int id) {
+        return new ResponseEntity <>(medicamentoService.listarUnoMedicamento(id), HttpStatus.OK);
     }
-
 
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<Medicamento> actualizarMedicamento(@PathVariable Integer id, @RequestBody Medicamento medicamento) {
@@ -49,6 +47,3 @@ public class MedicamentoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
-
-
-

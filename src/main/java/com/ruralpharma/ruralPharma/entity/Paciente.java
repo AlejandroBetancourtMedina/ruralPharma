@@ -1,12 +1,12 @@
 package com.ruralpharma.ruralPharma.entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,17 +14,24 @@ public class Paciente {
     @Id
     private String rut;
     private String nombre;
-    private LocalDate fNacimiento;
+    private String fNacimiento;
 
     private int telefono;
     private String domicilio;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat (pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fechaCreacion;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat (pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fechaActualizacion;
     @OneToMany(mappedBy="paciente", cascade = CascadeType.ALL)
     private List<Medicamento> medicamentos;
 
     public Paciente() {
+        this.fechaCreacion = LocalDateTime.now();
+        this.fechaActualizacion = LocalDateTime.now();
     }
+
 
     public String getRut() {
         return rut;
@@ -42,11 +49,11 @@ public class Paciente {
         this.nombre = nombre;
     }
 
-    public LocalDate getfNacimiento() {
+    public String getfNacimiento() {
         return fNacimiento;
     }
 
-    public void setfNacimiento(LocalDate fNacimiento) {
+    public void setfNacimiento(String fNacimiento) {
         this.fNacimiento = fNacimiento;
     }
 

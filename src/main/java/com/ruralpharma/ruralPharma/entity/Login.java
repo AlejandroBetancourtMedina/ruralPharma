@@ -1,9 +1,11 @@
 package com.ruralpharma.ruralPharma.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -17,10 +19,16 @@ public class Login {
     private String apellido;
     private String profesion;
     private String establecimiento;
-    private LocalDateTime fechaCreacion;// LocaDateTime almacenara fecha y hora
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
+    private LocalDateTime fechaCreacion;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat (pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fechaActualizacion;
 
     public Login() {
+        this.fechaCreacion = LocalDateTime.now();
+        this.fechaActualizacion = LocalDateTime.now();
     }
 
     public String getRut() {

@@ -2,6 +2,7 @@ package com.ruralpharma.ruralPharma.service;
 
 import com.ruralpharma.ruralPharma.entity.Login;
 import com.ruralpharma.ruralPharma.entity.Medicamento;
+import com.ruralpharma.ruralPharma.entity.Paciente;
 import com.ruralpharma.ruralPharma.repository.LoginRepository;
 import com.ruralpharma.ruralPharma.repository.MedicamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,8 @@ public class MedicamentoService {
         return medicamentoRepository.findAll();
     }
 
-    public Optional<Medicamento> listarUno (int id){
-        return medicamentoRepository.findById(id);
+    public Medicamento listarUnoMedicamento(int id){
+        return medicamentoRepository.findById(id).get();
     }
     public Medicamento actualizar(Integer id, Medicamento medicamento) {
         Optional<Medicamento> response = medicamentoRepository.findById(Integer.valueOf(id));
@@ -37,7 +38,6 @@ public class MedicamentoService {
         response.get().setFechaEntrega(medicamento.getFechaEntrega());
         response.get().setDescripcion(medicamento.getDescripcion());
         response.get().setCantidad(medicamento.getCantidad());
-        response.get().setTipoReceta(medicamento.getTipoReceta());
         response.get().setLote(medicamento.getLote());
         response.get().setFechaVencimiento(medicamento.getFechaVencimiento());
         response.get().setFechaActualizacion(medicamento.getFechaActualizacion());

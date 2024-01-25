@@ -1,7 +1,8 @@
 package com.ruralpharma.ruralPharma.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import org.hibernate.id.IncrementGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -12,26 +13,37 @@ public class Medicamento {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String producto;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat (pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fechaEntrega;
     private String descripcion;
     private int cantidad;
     private String tipoReceta;
     private String lote;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @JsonFormat (pattern = "dd-MM-yyyy")
     private Date fechaVencimiento;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat (pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fechaCreacion;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat (pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fechaActualizacion;
     @ManyToOne
     @JoinColumn(name="rut")
     private Paciente paciente;
 
     public Medicamento() {
+        this.fechaEntrega = LocalDateTime.now();
+        this.fechaCreacion = LocalDateTime.now();
+        this.fechaActualizacion = LocalDateTime.now();
     }
 
-    public int getId() {
+    public int getid() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setid(int id) {
         this.id = id;
     }
 
@@ -46,6 +58,7 @@ public class Medicamento {
     public LocalDateTime getFechaEntrega() {
         return fechaEntrega;
     }
+
 
     public void setFechaEntrega(LocalDateTime fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
@@ -70,9 +83,11 @@ public class Medicamento {
     public String getTipoReceta() {
         return tipoReceta;
     }
+
     public void setTipoReceta(String tipoReceta) {
         this.tipoReceta = tipoReceta;
     }
+
     public String getLote() {
         return lote;
     }
@@ -113,7 +128,8 @@ public class Medicamento {
         this.paciente = paciente;
     }
 
-    @Override
+
+   @Override
     public String toString() {
         return "Medicamento{" +
                 "producto=" + producto + '\'' +

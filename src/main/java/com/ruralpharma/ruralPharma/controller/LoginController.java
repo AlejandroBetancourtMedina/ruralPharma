@@ -31,9 +31,8 @@ public class LoginController {
 
     @GetMapping("/listarUno/{rut}")
     public ResponseEntity<Login> listarUnLogin(@PathVariable("rut") int rut) {
-        return new ResponseEntity (loginService.listarUno(rut), HttpStatus.OK);
+        return new ResponseEntity<> (loginService.listarUno(rut), HttpStatus.OK);
     }
-
     @PutMapping("/actualizar/{rut}")
     public ResponseEntity<Login> actualizarLogin(@PathVariable String rut, @RequestBody Login login) {
         Login response = loginService.actualizar(rut, login);
